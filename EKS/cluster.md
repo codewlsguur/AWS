@@ -80,3 +80,8 @@ managedNodeGroups:
 ```
 eksctl create cluster -f cluster.yaml
 ```
+
+# cluster 확인 명령어
+```
+kubectl get nodes
+```
