@@ -27,7 +27,7 @@ aws iam create-policy \
 
 
 
-
+# aws configure
 ```
 eksctl create iamserviceaccount \
     --cluster=(이름) \
