@@ -19,3 +19,7 @@ CMD ["./(파일 이름)"]
 docker build -t (컨테이너 이름 or 파일 이름) .
 docker run -d -p(숫자(상관없음)):(포트번호) (파일 이름)
 ```
+# local host
+```
+curl localhost:(숫자(상관없음))/health
+```
