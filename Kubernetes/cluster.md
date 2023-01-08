@@ -10,7 +10,7 @@ eksctl version
 apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 metadata:
-  name: skills-cluster
+  name: (클러스터 이름)
   region: ap-northeast-2
   version: "1.22"
 cloudWatch:
