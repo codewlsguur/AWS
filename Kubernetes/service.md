@@ -4,7 +4,7 @@ kind: Service
 
 metadata:
   name: (이름)-service
-  namespace: skills
+  namespace: (네임스페이스 이름)
 spec:
   selector:
     skills/version: v1
@@ -20,7 +20,7 @@ kind: Service
 
 metadata:
   name: (이름)-service
-  namespace: skills
+  namespace: (네임스페이스 이름)
 spec:
   selector:
     skills/version: v1
