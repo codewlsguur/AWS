@@ -31,7 +31,9 @@ eksctl create iamserviceaccount \
 ```
 wget https://github.com/jetstack/cert-manager/releases/download/v1.5.4/cert-manager.yaml
 ```
-
+```
+kubectl apply -f cert-manager.yaml --validate=false
+```
 ```
 curl -Lo ALB.yaml https://github.com/kubernetes-sigs/aws-load-balancer-controller/releases/download/v2.4.4/v2_4_4_full.yaml
 ```
