@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: (디플로이멘트 이름)
+  name: (이름)-deployment
   namespace: (네임스페이스 이름)
 spec:
   selector:
