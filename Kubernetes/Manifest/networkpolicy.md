@@ -3,7 +3,7 @@ apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
   name: (이름)-network
-  namespace: skills
+  namespace: (네임스페이스 이름)
 spec:
   podSelector:
     matchLabels:
