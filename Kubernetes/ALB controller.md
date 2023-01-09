@@ -40,7 +40,7 @@ curl -Lo ALB.yaml https://github.com/kubernetes-sigs/aws-load-balancer-controlle
 sed -i.bak -e '480,488d' ./ALB.yaml
 ```
 ```
-sed -i.bak -e 's|your-cluster-name|(cluster 이름)|' ./ALB.yaml
+sed -i.bak -e 's|(cluster 이름)|(cluster 이름)|' ./ALB.yaml
 ```
 
 ```
