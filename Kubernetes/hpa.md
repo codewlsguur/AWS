@@ -23,7 +23,7 @@ apiVersion: autoscaling/v2beta2
 kind: HorizontalPodAutoscaler
 metadata:
   name: (이름)-hpa
-  namespace: skills(네임스페이스 
+  namespace: (네임스페이스)
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
