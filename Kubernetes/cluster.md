@@ -78,9 +78,9 @@ managedNodeGroups:
 
 # cluster 명령어
 ```
-eksctl create cluster -f cluster.yaml
+eksctl create cluster -f cluster.yml
 ```
 # cluster 삭제 명령어
 ```
-eksctl delete cluster -f cluster.yaml 
+eksctl delete cluster -f cluster.yml 
 ```
