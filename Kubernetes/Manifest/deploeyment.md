@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: (이름)-container
-        image: (이미지 URL)
+        image: (Ecr 이미지 URL)
         ports:
         - containerPort: 8080
         resources:
