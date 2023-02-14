@@ -7,5 +7,6 @@ wget https://raw.githubusercontent.com/aws/amazon-vpc-cni-k8s/master/config/mast
 kubectl apply -f calico-operator.yaml
 kubectl apply -f calico-crs.yaml
 ```
+```
 kubectl get daemonset calico-node --namespace calico-system
 ```
