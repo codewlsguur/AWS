@@ -10,7 +10,7 @@ sudo yum install -y awslogs
 cat<<EOF >>/etc/awslogs/awslogs.conf
 [로그그룹 이름]
 datetime_format = %b %d %H:%M:%S
-file = 로그그룹 이름
+file = 저장 파일 위치
 log_stream_name = {instance_id}
 initial_position = start_of_file
 log_group_name = 로그그룹 이름
