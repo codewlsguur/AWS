@@ -9,7 +9,7 @@ git branch -M (브런치 이름)
 git commit -m ""
 ```
 ```
-git push origin upstream
+git push origin (브런치 이름)
 ```
 ```
 nginx:latest
