@@ -5,7 +5,9 @@ git add .
 ```
 git branch -M (브런치 이름)
 ```
-git commit -m "dd"
+```
+git commit -m ""
+```
 ```
 git push origin upstream
 ```
