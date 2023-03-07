@@ -10,7 +10,7 @@ aws iam create-policy \
 ```
 eksctl utils associate-iam-oidc-provider \
     --region ap-northeast-2 \
-    --cluster worldskills-cloud-cluster \
+    --cluster (클러스트 이름) \
     --approve
 ```
 
