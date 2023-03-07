@@ -18,5 +18,5 @@ EOF
 
 sudo systemctl start awslogsd
 sudo systemctl enable awslogsd.service
-sed -i "s/us-east-1/ap-northeast-2/g" /etc/awslogs/awslogs.conf
+sed -i "s/us-east-1/( 리전 이름 )/g" /etc/awslogs/awslogs.conf
 ```
