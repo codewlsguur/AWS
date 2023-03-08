@@ -1,7 +1,7 @@
 # Docker 명령어
 ```
 sudo usermod -aG docker ec2-user
-systemctl enable --now docker
+sudo systemctl enable --now docker
 sudo su ec2-user
 ```
 
