@@ -2,7 +2,7 @@
 
 ***
 
-# 새로운 Item -> "Freestyle Project"
+### 새로운 Item -> "Freestyle Project"
 # 필요한 경우 concurrent 빌드 실행 Check
 # 소스 코드 관리 -> AWS CodePipeline 크릭
 
