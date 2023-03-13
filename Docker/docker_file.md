@@ -24,3 +24,12 @@ sudo docker run -d -p(숫자(상관없음)):(포트번호) (파일 이름)
 ```
 curl localhost:(숫자(상관없음))/health
 ```
+
+# Docker Build 지우는법
+```
+docker kill (docker container id)
+```
+# Docker Run 지우는법
+```
+docker rmi -f (docker images id)
+```
