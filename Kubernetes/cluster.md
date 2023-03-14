@@ -1,23 +1,10 @@
-# eks 다운로드
-```
-curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
-sudo mv /tmp/eksctl /usr/local/bin
-eksctl version
-```
-# kube ctl 다운로드
-```
-curl -o kubectl https://s3.us-west-2.amazonaws.com/amazon-eks/1.23.7/2022-06-29/bin/linux/amd64/kubectl
-chmod +x ./kubectl
-mv ./kubectl /usr/local/bin
-```
-
 # cluster.yaml
 ```
 apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 metadata:
   name: (클러스터 이름)
-  region: ap-northeast-2
+  region: ( 리전 )
   version: "1.22"
 cloudWatch:
   clusterLogging:
@@ -37,16 +24,19 @@ vpc:
       ap-northeast-2a-pub: { id: (서브넷 아이디) }
       ap-northeast-2b-pub: { id: (서브넷 아이디) }
       ap-northeast-2c-pub: { id: (서브넷 아이디) }
+      ap-northeast-2d-pub: { id: (서브넷 아이디) }
     private:
       ap-northeast-2a-priv: { id: (서브넷 아이디) }
       ap-northeast-2b-priv: { id: (서브넷 아이디) }
       ap-northeast-2c-priv: { id: (서브넷 아이디) }
+      ap-northeast-2d-priv: { id: (서브넷 아이디) }
+```
+# 노드그룹 추가
+```
 managedNodeGroups:
-  - name: skills-app
-    instanceName: skills-app
-    labels: { skills/dedicated: app }
-    tags: { skills/dedicated: app }
-    instanceType: c5.large
+  - name: ( 노드그룹 이름 )
+    instanceName: ( 인스턴스 이름 )
+    instanceType: ( 인스턴스 type )
     minSize: 2
     maxSize: 20
     desiredCapacity: 2
@@ -55,25 +45,7 @@ managedNodeGroups:
      - ap-northeast-2a-priv
      - ap-northeast-2b-priv
      - ap-northeast-2c-priv
-    iam:
-      withAddonPolicies:
-        imageBuilder: true
-        autoScaler: true
-        awsLoadBalancerController: true
-        cloudWatch: true
-  - name: skills-addon
-    instanceName: skills-addon
-    labels: { skills/dedicated: addon }
-    tags: { skills/dedicated: addon }
-    instanceType: c5.large
-    minSize: 2
-    maxSize: 20
-    desiredCapacity: 2
-    privateNetworking: true
-    subnets:
-     - ap-northeast-2a-priv
-     - ap-northeast-2b-priv
-     - ap-northeast-2c-priv
+     - ap-northeast-2d-priv
     iam:
       withAddonPolicies:
         imageBuilder: true
