@@ -1,3 +1,11 @@
+# cluster 명령어
+```
+eksctl create cluster -f cluster.yml
+```
+# cluster 삭제 명령어
+```
+eksctl delete cluster -f cluster.yml 
+```
 # cluster.yaml
 ```
 apiVersion: eksctl.io/v1alpha5
@@ -53,12 +61,21 @@ managedNodeGroups:
         awsLoadBalancerController: true
         cloudWatch: true
 ```
+# Fargate
+```
+fargateProfiles:
+  - name: <>
+    selectors:
+      - namespace: <>
+  - name: <>
+    selectors:
+      - namespace: <>
+```
+# Fargate 라벨 추가
+```
+selectors:
+    labels:
+        env: <>
+        checks: <>
+```
 
-# cluster 명령어
-```
-eksctl create cluster -f cluster.yml
-```
-# cluster 삭제 명령어
-```
-eksctl delete cluster -f cluster.yml 
-```
