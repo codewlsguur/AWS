@@ -8,7 +8,6 @@ metadata:
   namespace: (네임스페이스 이름)
 spec:
   selector:
-    skills/version: v1
     type: (이름 1)
   ports:
   - port: 80
@@ -24,7 +23,6 @@ metadata:
   namespace: (네임스페이스 이름)
 spec:
   selector:
-    skills/version: v1
     type: (이름 2)
   ports:
   - port: 80
