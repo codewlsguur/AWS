@@ -31,7 +31,7 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: (이름)-ingress
+  name: (ingress 이름)
   namespace: (네임스페이스 이름)
   annotations:
     alb.ingress.kubernetes.io/load-balancer-name: ( ALB 이름 )
