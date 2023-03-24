@@ -4,7 +4,7 @@
 PutRecrod
 ```
 ```
-PutRecods
+PutRecrods
 ```
 
 # Kinesis DataStream (Glue Talbe) 으로 데이터 전송
