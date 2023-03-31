@@ -136,3 +136,94 @@ curl -X POST -H "Content-Type: application/json" -d '{ "변경": "넣고 싶은 
 
 
 ```
+
+# ECS
+```
+ECS - Fargate (WebProvisioning)
+
+Ec2 instance를 먼저 Public으로 만들어 접속한후, Dockerfile을 작성하여 줍니다.
+
+ECS를 만들기 위해선 ECR(Dockerfile) 이 필요하기 때문에 ECR에 Dockerfile을
+업로드 해줍니다.
+
+
+Docker 설치 명령어
+
+sudo yum install docker -y
+sudo usermod -aG docker ec2-user
+sudo systemctl enable --now docker
+sudo su ec2-user
+
+
+
+Dockerfile을 업로드 하기 위해서는 
+
+docker build -t (docker image 이름) .
+docker run -d -p(포트번호):(포트번호)  (docker image 이름)
+
+
+ECR에서 업로드를 확인하고, ELB를 만들어줍니다.
+
+ALB 사용 - 대상그룹을 이용하여 ALB를 만들고 리스너를 삭제합니다.
+NLB 사용 - 대상그룹(alb) 선택,  ALB를 만들고 NLB를 만들고 리스너를 삭제합니다.
+
+
+ECS로 접속하여 “작업정의(Task Definitions)”를 만들어줍니다.
+작업정의에서 Fargate를 선택해줍니다.
+
+
+작업정의에서 “컨테이너 추가” 컨테이너를 작성해줍니다.
+컨테이너 포트는 app의 포트를 작성해줍니다.
+용량은 기본 512를 추천하고, 완료를 누릅니다.
+
+ECS에서 Fargate를 골라 Cluster를 만들어주고,
+service를 만들어줍니다.
+
+service에서 ELB를 연결할떄 listener 포트는 “80”으로 해줘야한다 (필수)
+
+ECS - EC2/Instance (CICD)
+
+
+Ec2 instance를 먼저 Public으로 만들어 접속한후, Dockerfile을 작성하여 줍니다.
+
+ECS를 만들기 위해선 ECR(Dockerfile) 이 필요하기 때문에 ECR에 Dockerfile을
+업로드 해줍니다.
+
+
+Docker 설치 명령어
+
+sudo yum install docker -y
+sudo usermod -aG docker ec2-user
+sudo systemctl enable --now docker
+sudo su ec2-user
+
+
+
+Dockerfile을 업로드 하기 위해서는 
+
+docker build -t (docker image 이름) .
+docker run -d -p(포트번호):(포트번호)  (docker image 이름)
+
+
+ECR에서 업로드를 확인하고, ELB를 만들어줍니다.
+
+ALB 사용 - 대상그룹을 이용하여 ALB를 만들고 리스너를 삭제합니다.
+NLB 사용 - 대상그룹(alb) 선택,  ALB를 만들고 NLB를 만들고 리스너를 삭제합니다.
+
+
+ECS로 접속하여 “작업정의(Task Definitions)”를 만들어줍니다.
+작업정의에서 EC2/Instance를 선택해줍니다.
+
+
+작업정의에서 “컨테이너 추가” 컨테이너를 작성해줍니다.
+컨테이너 포트는 app의 포트를 작성하고 Host는 0으로 작성해줍니다.
+용량은 기본 512를 추천하고, 완료를 누릅니다.
+
+ECS에서 EC2를 골라 Cluster를 만들어주고,
+service를 만들어줍니다.
+
+service에서 ELB를 연결할떄 listener 포트는 “80”으로 해줘야한다 (필수)
+
+
+
+```
